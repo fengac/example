@@ -40,7 +40,8 @@ int read_column_numbers( int columns[], int max ) {
     int ch;
 
     printf( "Enter the number of columns: " );
-    while ( num < max && scanf("%d", &columns[num]) == 1 && columns[num] > 0 ) {
+    while ( num < max && scanf("%d", &columns[num]) == 1 
+        && columns[num] > 0 ) {
         num++;
     }
 
@@ -61,7 +62,8 @@ void show_columns( int columns[], int max ) {
     }
 }
 
-void rearrange( char *output, char const *input, int n_columns, int const columns[] ) {
+void rearrange( char *output, char const *input, 
+    int n_columns, int const columns[] ) {
     int col;
     int output_col;
     int len;
