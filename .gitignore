@@ -1,0 +1,5 @@
+.vscode/launch.json
+.vscode/tasks.json
+src/pointer/range.dSYM/Contents/Info.plist
+src/pointer/range.dSYM/Contents/Resources/DWARF/range
+src/pointer/range.dSYM/Contents/Resources/Relocations/aarch64/range.yml

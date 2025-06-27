@@ -20,6 +20,11 @@ void rearrange( char *output, char const *input,
      int n_columns, int const columns[] );
 
 int main( int argc, char *argv[] ) {
+    float a = 0.1f;
+    printf("a = %x\n", a);
+
+
+    #if 0
     int  columns[MAX_COLS];
     char input[MAX_INPUT];
     char output[MAX_INPUT];
@@ -31,6 +36,7 @@ int main( int argc, char *argv[] ) {
         rearrange( output, input, n_columns, columns );
         printf( "Rearranged line: %s\n", output );
     }
+    #endif
 
     return EXIT_SUCCESS;
 }
