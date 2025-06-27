@@ -7,12 +7,15 @@
  *  输入行的第一行是一串列标号，串的最后一个以负数结尾
  *  这些列标号成对出现，说明需要被打印的输入行列的范围
  * 
+ * 1.去除列标号的个数必须是偶数
+ * 2.当字符的列范围超出输入行的末尾时就停止复制，这个判断是假设列范围以递增顺序出现才是正确的，修复它
+ * 
  */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#define MAX_INPUT 100
-#define MAX_COLS 10
+#define  MAX_INPUT 100
+#define  MAX_COLS 10
 
 int  read_column_numbers( int columns[], int max );
 void show_columns( int columns[], int max );
@@ -20,11 +23,7 @@ void rearrange( char *output, char const *input,
      int n_columns, int const columns[] );
 
 int main( int argc, char *argv[] ) {
-    float a = 0.1f;
-    printf("a = %x\n", a);
-
-
-    #if 0
+    #if 1
     int  columns[MAX_COLS];
     char input[MAX_INPUT];
     char output[MAX_INPUT];
@@ -80,7 +79,7 @@ void rearrange( char *output, char const *input,
     for ( col = 0; col < n_columns; col = col + 2 ) {
         int nchars = columns[col + 1] - columns[col] + 1;
 
-        if ( columns[col] > len || output_col == MAX_INPUT - 1 ) {
+        if ( columns[col] >= len || output_col == MAX_INPUT - 1 ) {
             break;;
         }
 
