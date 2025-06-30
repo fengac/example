@@ -60,10 +60,8 @@ char * show_with_linen_number()
 // 4. 编写一个程序，一行行地读取输入行，直至到达文件尾。算出每行输入行的长度，然后把最
 // 长的那行打印出来。
 
+void test() {
 
-
-void test() 
-{
 	printf( "缓冲区大小: %d\n", BUFSIZ );
 	// 自定义缓冲区(大小可调整)
 	char custom_buffer[10];  
