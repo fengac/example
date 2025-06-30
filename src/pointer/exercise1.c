@@ -1,11 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits.h>
 #define  MAX_INPUT 16
 
 char * show_with_linen_number();
 void test();
 
-int main( int argc, char *argv[] ) {
+int main( int argc, char *argv[] ) 
+{
 	int line_number = 1;
 	char *text = show_with_linen_number();
 
@@ -13,9 +15,9 @@ int main( int argc, char *argv[] ) {
 	printf( " ----------- \n" );
 	printf( "%d: ", line_number );
 
-	while ( *text != '\0' ) {
+	while( *text != '\0' ) {
 		fputc( *text, stdout );
-		if (*text == '\n' ) {
+		if(*text == '\n' ) {
 			line_number++;
 			printf( "%d: ", line_number );
 		}
@@ -28,19 +30,20 @@ int main( int argc, char *argv[] ) {
 
 // 2. 编写一个程序，从标准输入读取几行输入。每行输入都要打印到标准输出上，前面要加上行号。
 // 在编写这个程序时要试图让程序能够处理的输入行的长度没有限制。
-char * show_with_linen_number() {
+char * show_with_linen_number() 
+{
 	char *buf = (char *)malloc( sizeof(char) * MAX_INPUT );
 
 	int ch;
 	size_t len = 0;
 	int line_number = 1;
 
-	while ( (ch = getchar()) != EOF ) {
-		if ( len > MAX_INPUT - 1 ) {
+	while( (ch = getchar()) != EOF ) {
+		if( len > MAX_INPUT - 1 ) {
 			char *new_buf = (char *)realloc( buf, sizeof(buf) * 2 );
 			buf  = new_buf;
 		}
-		if ( ch == '\n' ) {
+		if( ch == '\n' ) {
 			line_number++;
 		}
 
@@ -59,7 +62,8 @@ char * show_with_linen_number() {
 
 
 
-void test() {
+void test() 
+{
 	printf( "缓冲区大小: %d\n", BUFSIZ );
 	// 自定义缓冲区(大小可调整)
 	char custom_buffer[10];  
@@ -71,7 +75,7 @@ void test() {
     int i = 0;
     int ch;
     printf( "请输入一行字符串: " );
-    while ( (ch = getchar() ) != '\n' && ch != EOF ) {
+    while( (ch = getchar() ) != '\n' && ch != EOF ) {
         str[i++] = ch;
     }
     str[i] = '\0';

@@ -22,7 +22,8 @@ void show_columns( int columns[], int max );
 void rearrange( char *output, char const *input, 
      int n_columns, int const columns[] );
 
-int main( int argc, char *argv[] ) {
+int main( int argc, char *argv[] ) 
+{
     #if 1
     int  columns[MAX_COLS];
     char input[MAX_INPUT];
@@ -40,35 +41,38 @@ int main( int argc, char *argv[] ) {
     return EXIT_SUCCESS;
 }
 
-int read_column_numbers( int columns[], int max ) {
+int read_column_numbers( int columns[], int max ) 
+{
     int num = 0;
     int ch;
 
     printf( "Enter the number of columns: " );
-    while ( num < max && scanf("%d", &columns[num]) == 1 
+    while( num < max && scanf("%d", &columns[num]) == 1 
         && columns[num] > 0 ) {
         num++;
     }
 
-    if ( num % 2 != 0 ) {
+    if( num % 2 != 0 ) {
         puts( "Last column number is not paried" );
         exit( EXIT_FAILURE );
     }
 
-    while ( (ch = getchar()) != '\n' && ch != EOF )
+    while( (ch = getchar()) != '\n' && ch != EOF )
         ;
         
     return num;
 }
 
-void show_columns( int columns[], int max ) {
-    for ( int i = 0; i < max; i++ ) {
+void show_columns( int columns[], int max ) 
+{
+    for( int i = 0; i < max; i++ ) {
         printf( "%d ", columns[i] );
     }
 }
 
 void rearrange( char *output, char const *input, 
-    int n_columns, int const columns[] ) {
+    int n_columns, int const columns[] ) 
+{
     int col;
     int output_col;
     int len;
@@ -76,14 +80,14 @@ void rearrange( char *output, char const *input,
     len = strlen( input );
     output_col = 0;
 
-    for ( col = 0; col < n_columns; col = col + 2 ) {
+    for( col = 0; col < n_columns; col = col + 2 ) {
         int nchars = columns[col + 1] - columns[col] + 1;
 
-        if ( columns[col] >= len || output_col == MAX_INPUT - 1 ) {
+        if( columns[col] >= len || output_col == MAX_INPUT - 1 ) {
             break;;
         }
 
-        if ( output_col + nchars > MAX_INPUT - 1 ) {
+        if( output_col + nchars > MAX_INPUT - 1 ) {
             nchars = MAX_INPUT - output_col - 1;
         }
 

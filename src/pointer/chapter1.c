@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #define  MAX_INPUT 50
 
-int main( int argc, char *argv[] ) {
+int main( int argc, char *argv[] ) 
+{
 	// 4. 分别打印十进制整数，字符串和浮点数
 	int a = 12;
 	char *str = "hello";
