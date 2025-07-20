@@ -3,7 +3,7 @@ CC = gcc
 # 编译选项
 CFLAGS = -Wall -g
 # 源文件
-SRCS = bitshift.c
+SRCS = sort.c
 # 目标文件
 OBJS = $(SRCS:.c=.o)
 # 可执行文件

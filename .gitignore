@@ -4,3 +4,4 @@ src/pointer/range.dSYM/Contents/Info.plist
 src/pointer/range.dSYM/Contents/Resources/DWARF/range
 src/pointer/range.dSYM/Contents/Resources/Relocations/aarch64/range.yml
 src/pointer/chapter1.dSYM
+*.exe
