@@ -21,7 +21,7 @@ int main(int argc, char *agv[]) {
 		"pretty girl",
 		NULL
 	};
-	int rst = find_char( strings, 'y' );
+	int rst = find_char( strings, 'z' );
 	printf( "rst = %d\n", rst );
 
 
@@ -56,14 +56,15 @@ size_t c_strlen( char *str ) {
 int find_char( char **strings, char ch ) {
 	assert(strings != NULL);
 	while( *strings != NULL ) {
-		char *string = *strings;
+		char *string = *strings++;
 		while( *string != '\0' ) {
-			if( *string == ch ) {
+			// *间接操作符优化级比++运算符低
+			if( *string++ == ch ) {
 				return TRUE;
 			}
-			string++;
+			// string++;
 		}
-		strings++;
+		// strings++;
 	}
 	return FALSE;
 }
